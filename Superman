@@ -1,0 +1,36 @@
+#Do some math for you, to help PID tunning be quicker. YOUR WELCOME - RGS
+# OH , and this is the Ziegler-Nichols method, using the "some overshoot" section on wikipedia
+
+#These two guys are just here because I always forget to capitilze true and false
+true = True
+false = False
+#sets up while loop
+running = true
+
+#Users love this stuff. Also, it makes you feel less forever alone
+print(' Hello sweetie! I\'m here to assist your calculations.Just give me the numbers' )
+
+#While loop, my computer closed the shell randomly, this is my fix
+while running == true:
+    
+    #Calcuate the Kp from the Ku (Ku is basically the Kp rating you got from your attempts at guessing)
+    Ku=float(input('Lets start with U: '))
+    Kp=Ku * .33
+    print('Kp comes out to equal', Kp)
+
+    #Calculate the Ki, right now we just use a stop watch to time it. Centiseconds just look nice too
+    Tu=float(input('I would also like to know the time in centiseconds: '))
+    Ki=Kp/Tu
+    print('Hm...that would make Ki end up as', Ki)	
+
+    #Prints the Kd value, with already gathered intergers (Kp and Tu) making this a failry simple code
+    Kd= (Kp * Tu)/(3)
+    print('And of course, master, the Kd is', Kd)
+
+    #This block is just to give you a clear export of numbers to quickly refrence
+    print(' ')
+    print('Basically,')
+    print(' Kp =', Kp)
+    print(' Ki =', Ki)
+    print(' Kd =', Kd)
+
